@@ -1,1 +1,3 @@
+# 需要被 ESLint 忽略的文件
+
 coverage

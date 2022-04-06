@@ -1,46 +1,34 @@
-/* eslint valid-jsdoc: "off" */
-
 'use strict';
 
-/**
- * @param {Egg.EggAppInfo} appInfo app info
- */
 module.exports = appInfo => {
-  /**
-   * built-in config
-   * @type {Egg.EggAppConfig}
-   **/
   const config = exports = {};
-
-  // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1648697325610_6476';
-
-  // add your middleware config here
+  config.keys = appInfo.name + '_1620783032002_1928';
   config.middleware = [];
-
-  // add your user config here
-  const userConfig = {
-    // myAppName: 'egg',
-  };
-
-  // 添加 view 配置
-  exports.view = {
-    defaultViewEngine: 'nunjucks',
-    mapping: {
-      '.tpl': 'nunjucks',
+  /* 取消安全证书验证 */
+  config.security = {
+    csrf: {
+      enable: false,
     },
+    domainWhiteList: [ '*' ], // 白名单
   };
 
-  exports.news = {
-    pageSize: 5,
-    serverUrl: 'https://hacker-news.firebaseio.com/v0',
+  /* 连接mysql配置 */
+  config.sequelize = {
+    dialect: 'mysql',
+    host: 'localhost',
+    port: 3306,
+    database: 'egg-mysql',
+    username: 'root',
+    password: '123456',
   };
 
-  exports.middleware = [ 'robot' ];
-
-  exports.robot = {
-    ua: [ /Baiduspider/i ],
+  /* 配置允许跨域 */
+  config.cors = {
+    credentials: true,
+    origin: '*', // 允许任何跨域，若只允许个别IP跨域，则：origin:['http://localhost:8080']
+    allowMethods: 'GET,PUT,POST,DELETE', // 被允许的请求方式
   };
+  const userConfig = {};
 
   return {
     ...config,

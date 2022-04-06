@@ -1,3 +1,18 @@
 {
-  "extends": "eslint-config-egg"
+  "extends": "standard",
+  "rules": {
+    "comma-dangle": ["error", "always-multiline"],
+    "operator-linebreak": ["error", "before"],
+    "space-before-function-paren": [
+      "error",
+      { "anonymous": "always", "named": "always", "asyncArrow": "always" }
+    ]
+  },
+  "globals": {
+    "_": "readonly",
+    "app": true
+  },
+  "env": {
+    "node": true
+  }
 }

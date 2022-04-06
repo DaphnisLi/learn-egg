@@ -1,14 +1,20 @@
 'use strict';
 
 /** @type Egg.EggPlugin */
-// module.exports = {
-//   // had enabled by egg
-//   // static: {
-//   //   enable: true,
-//   // }
-// }
-
-exports.nunjucks = {
-  enable: true,
-  package: 'egg-view-nunjucks',
+module.exports = {
+  nunjucks: {
+    enable: true,
+    package: 'egg-view-nunjucks',
+  },
+  // 引入egg-sequelize包
+  sequelize: {
+    enable: true,
+    package: 'egg-sequelize',
+  },
+  // 引入egg-cors包
+  cors: {
+    enable: true,
+    package: 'egg-cors',
+  },
 };
+
