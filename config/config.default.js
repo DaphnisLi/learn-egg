@@ -10,17 +10,7 @@ module.exports = appInfo => {
       enable: false,
     },
     domainWhiteList: [ '*' ], // 白名单
-  };
-
-  /* 连接mysql配置 */
-  config.sequelize = {
-    dialect: 'mysql',
-    host: 'localhost',
-    port: 3306,
-    database: 'egg-mysql',
-    username: 'root',
-    password: '123456',
-  };
+  }
 
   /* 配置允许跨域 */
   config.cors = {
@@ -28,6 +18,15 @@ module.exports = appInfo => {
     origin: '*', // 允许任何跨域，若只允许个别IP跨域，则：origin:['http://localhost:8080']
     allowMethods: 'GET,PUT,POST,DELETE', // 被允许的请求方式
   };
+  // 数据库配置
+  config.sequelize = {
+    dialect: 'mysql',
+    host: 'localhost',
+    port: 3306,
+    database: 'egg-sequelize-doc-default',
+    password: 'lishuang',
+  };
+
   const userConfig = {};
 
   return {

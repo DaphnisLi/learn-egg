@@ -1,0 +1,16 @@
+{
+  "development": {
+    "username": "root",
+    "password": "lishuang",
+    "database": "egg-sequelize-doc-default",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "lishuang",
+    "database": "egg-sequelize-doc-unittest",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
